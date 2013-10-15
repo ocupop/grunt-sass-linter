@@ -23,6 +23,16 @@ module.exports = function(grunt) {
       },
     },
 
+    // convert linter to vanilla JS
+    coffee: {
+      compile: {
+        files: {
+          'tasks/sass_linter.js' : 'tasks/sass_linter.coffee'
+        }
+      }
+    },
+
+
     // Before generating any new files, remove any previously-created files.
     clean: {
       tests: ['tmp'],
@@ -30,22 +40,7 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     sass_linter: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
-      },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!',
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
-      },
+
     },
 
     // Unit tests.
@@ -62,12 +57,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
   grunt.registerTask('test', ['clean', 'sass_linter', 'nodeunit']);
 
-  // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'test']);
+  // By default, build linter and run all tests.
+  grunt.registerTask('default', ['coffee']);
 
 };
