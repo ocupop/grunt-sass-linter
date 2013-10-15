@@ -1,0 +1,43 @@
+{
+  "name": "grunt-sass-linter",
+  "description": "Advanced style guide fascism for SASS",
+  "version": "0.1.0",
+  "homepage": "https://github.com/ocupop/grunt-sass-linter",
+  "author": {
+    "name": "Justin Falcone",
+    "email": "justin@ocupop.com",
+    "url": "http://justinfalcone.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ocupop/grunt-sass-linter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ocupop/grunt-sass-linter/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/ocupop/grunt-sass-linter/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
